@@ -779,6 +779,8 @@ class LegendaryCLI:
                          f'wrapper in the configuration file or command line. See the README for details.')
             return
 
+        # You cannot launch a URI without start.exe, this applies to windows as well
+        command.append('start.exe ')
         command.append(origin_uri)
         if args.dry_run:
             if cmd:
